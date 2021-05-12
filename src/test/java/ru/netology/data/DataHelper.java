@@ -29,71 +29,71 @@ public class DataHelper {private static Faker faker = new Faker(new Locale("en")
         return faker.business().creditCardNumber();
     }
 
-    public static String getCardNumberEmpty() {
+    public static String getEmptyCardNumber() {
         return "                   ";
     }
 
-    public static String getCardNumberZero() {
+    public static String getZeroCardNumber() {
         return "0000 0000 0000 0000";
     }
 
-    public static String getValidMonth() {
-        return "01";
-    }
-
-    public static String getInvalidMonth() {
-        return "13";
-    }
-
-    public static String getEmptyMonth() {
+    public static String getMonthEmpty() {
         return "  ";
     }
 
-    public static String getZeroMonth() {
+    public static String getMonthZero() {
         return "00";
     }
 
-    public static String getValidYear() {
-        return "24";
+    public static String getMonthValid() {
+        return "03";
     }
 
-    public static String getInvalidYear() {
-        return "14";
+    public static String getMonthInvalid() {
+        return "13";
     }
 
-    public static String getEmptyYear() {
+    public static String getYearEmpty() {
         return "  ";
     }
 
-    public static String getValidOwner() {
+    public static String getYearValid() {
+        return "23";
+    }
+
+    public static String getYearInvalid() {
+        return "09";
+    }
+
+    public static String getOwnerValid() {
         return faker.name().fullName();
     }
 
-    public static String getInvalidOwner() {
-        return "Петр(. 123";
+    public static String getOwnerInvalid() {
+        return "Васька=)812";
     }
 
-    public static String getEmptyOwner() {
+    public static String getOwnerEmpty() {
         return "  ";
     }
 
-    public static String getLongOwner() {
-        return "Владимир Ленин Владимир Ленин Владимир Ленин Владимир Ленин Владимир Ленин Владимир Ленин Владимир Ленин Владимир Ленин Владимир Ленин Владимир Ленин Владимир Ленин";
+    public static String getOwnerLong() {
+        return "Маша Иванова Петрова Сидорова Сергеевааааааааааа Маша Иванова Иванова";
     }
 
-    public static String getValidCvs() {
-        return "456";
+    public static String getCvsValid() {
+        return "874";
     }
 
-    public static String getInvalidCvs() {
-        return "12";
+    public static String getCvsInvalid() {
+        return "15";
     }
 
-    public static String getEmptyCvs() {
+    public static String getCvsEmpty() {
         return "  ";
     }
 
-    public static String getZeroCvs() {
+    public static String getCvsZero() {
         return "000";
     }
 }

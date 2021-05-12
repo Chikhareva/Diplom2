@@ -9,21 +9,21 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
 import ru.netology.data.DatabaseHelper;
-import ru.netology.page.MainPage;
-import ru.netology.page.PaymentPage;
+import ru.netology.page.Main;
+import ru.netology.page.Payment;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BuyWithCreditTest {
-    MainPage mainPage = new MainPage();
-    PaymentPage paymentPage = new PaymentPage();
+public class BuyByCreditCardTest {
+    Main main = new Main();
+    Payment payment = new Payment();
 
     @BeforeEach
     void shouldCleanDataBaseAndOpenWeb() {
         DatabaseHelper.cleanDataBase();
-        open("http://localhost:8080", MainPage.class);
-        mainPage.buyWithCredit();
+        open("http://localhost:8080", Main.class);
+        main.buyWithCredit();
 
     }
 
@@ -38,28 +38,28 @@ public class BuyWithCreditTest {
     }
 
     @Test
-    void shouldApproveFirstCard() {
+    void shouldPayFirstCardApprove() {
         val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvs = DataHelper.getValidCvs();
-        paymentPage.fillOutFields(cardNumber, month, year, owner, cvs);
-        paymentPage.expectApprovalFromBank();
+        val month = DataHelper.getMonthValid();
+        val year = DataHelper.getYearValid();
+        val owner = DataHelper.getOwnerValid();
+        val cvs = DataHelper.getCvsValid();
+        payment.fillOutFields(cardNumber, month, year, owner, cvs);
+        payment.expectApprovalFromBank();
         val expected = DataHelper.getFirstCardExpectedStatus();
         val actual = DatabaseHelper.getStatusPaymentWithCredit();
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldRejectSecondCard() {
+    void shouldPaymentBySecondCardReject() {
         val cardNumber = DataHelper.getSecondCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvs = DataHelper.getValidCvs();
-        paymentPage.fillOutFields(cardNumber, month, year, owner, cvs);
-        paymentPage.expectRejectionFromBank();
+        val month = DataHelper.getMonthValid();
+        val year = DataHelper.getYearValid();
+        val owner = DataHelper.getOwnerValid();
+        val cvs = DataHelper.getCvsValid();
+        payment.fillOutFields(cardNumber, month, year, owner, cvs);
+        payment.expectRejectionFromBank();
         val expected = DataHelper.getSecondCardExpectedStatus();
         val actual = DatabaseHelper.getStatusPaymentWithCredit();
         assertEquals(expected, actual);

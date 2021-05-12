@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class PaymentPage {
+public class Payment {
     private SelenideElement fieldCardNumber = $("[placeholder='0000 0000 0000 0000']");
     private SelenideElement fieldMonth = $("[placeholder='08']");
     private SelenideElement fieldYear = $("[placeholder='22']");
