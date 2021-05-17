@@ -7,7 +7,6 @@
 ## Процедура запуска тестов сервиса покупки путешествий для MySql
 * Установить на рабочий компьютер ПО Putty, инструкция и ссылка на дистрибутив [тут](https://github.com/netology-code/aqa-homeworks/blob/master/docker/timeweb-instruction.md)
 * Подключиться к виртуальной машине ip 185.119.57.47
-* Запустить Docker командой 
 * Клонировать [репозиторий](https://github.com/Chikhareva/Diplom2) на локальную машину машину.
 * Перейти в каталог проекта
 * Запускаем контейнеры MySql и Node c помощью команды docker-compose up -d --force-recreate.
@@ -21,7 +20,6 @@
 ## Процедура запуска тестов сервиса покупки путешествий для PostgreSQL
 * Установить на рабочий компьютер ПО Putty, инструкция и ссылка на дистрибутив [тут](https://github.com/netology-code/aqa-homeworks/blob/master/docker/timeweb-instruction.md)
 * Подключиться к виртуальной машине ip 185.119.57.47
-* Запустить Docker командой 
 * Клонировать [репозиторий](https://github.com/Chikhareva/Diplom2) на локальную машину машину.
 * Перейти в каталог проекта. 
 * Запускаем контейнеры PostgreSQL и Node c помощью команды docker-compose up -d --force-recreate.
