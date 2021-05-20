@@ -2,7 +2,7 @@
 
 * [Plan](https://github.com/Chikhareva/Diplom2/blob/master/DiplomDocs/Plan.md)
 * [Report](https://github.com/Chikhareva/Diplom2/blob/master/DiplomDocs/Report.md)
-* [Summery](https://github.com/Chikhareva/Diplom2/blob/master/DiplomDocs/Summery.md)
+* [Summary](https://github.com/Chikhareva/Diplom2/blob/master/DiplomDocs/Summery.md)
 
 ## Процедура запуска тестов сервиса покупки путешествий для MySql
 * Установить на рабочий компьютер ПО Putty, инструкция и ссылка на дистрибутив [тут](https://github.com/netology-code/aqa-homeworks/blob/master/docker/timeweb-instruction.md)
