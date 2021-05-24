@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import static java.sql.DriverManager.getConnection;
 
 public class DatabaseHelper {
-    private static final String url = System.getProperty("url");
-    private static final String user = System.getProperty("user");
-    private static final String password = System.getProperty("password");
+    private static final String URL = System.getProperty("url");
+    private static final String USER = System.getProperty("user");
+    private static final String PASSWORD = System.getProperty("password");
     private DatabaseHelper() {
     }
 
@@ -17,7 +17,7 @@ public class DatabaseHelper {
         val statusSql = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1";
 
         try (
-                val connection = getConnection(url, user, password);
+                val connection = getConnection(URL, USER, PASSWORD);
                 val statusStmt = connection.createStatement();
         ) {
             try (val rs = statusStmt.executeQuery(statusSql)) {
@@ -37,7 +37,7 @@ public class DatabaseHelper {
         val statusSql = "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1";
 
         try (
-                val connection = getConnection(url, user, password);
+                val connection = getConnection(URL, USER, PASSWORD);
                 val statusStmt = connection.createStatement();
         ) {
             try (val rs = statusStmt.executeQuery(statusSql)) {
@@ -60,7 +60,7 @@ public class DatabaseHelper {
         val orders = "DELETE FROM order_entity";
 
         try (
-                val connection = getConnection(url, user, password);
+                val connection = getConnection(URL, USER, PASSWORD);
 
                 val prepareStatPay = connection.createStatement();
                 val prepareStatCredit = connection.createStatement();

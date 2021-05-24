@@ -9,19 +9,19 @@ public class DataHelper {private static Faker faker = new Faker(new Locale("en")
     private DataHelper() {
     }
 
-    public static String getFirstCardNumber() {
+    public static String getApprovedCardNumber() {
         return "4444 4444 4444 4441";
     }
 
-    public static String getFirstCardExpectedStatus() {
+    public static String getApprovedCardExpectedStatus() {
         return "APPROVED";
     }
 
-    public static String getSecondCardNumber() {
+    public static String getDeclidedCardNumber() {
         return "4444 4444 4444 4442";
     }
 
-    public static String getSecondCardExpectedStatus() {
+    public static String getDeclidedCardExpectedStatus() {
         return "DECLINED";
     }
 

@@ -39,28 +39,28 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldPayFirstCardApprove() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthValid();
         val year = DataHelper.getYearValid();
         val owner = DataHelper.getOwnerValid();
         val cvs = DataHelper.getCvsValid();
         payment.fillOutFields(cardNumber, month, year, owner, cvs);
         payment.expectApprovalFromBank();
-        val expected = DataHelper.getFirstCardExpectedStatus();
+        val expected = DataHelper.getApprovedCardExpectedStatus();
         val actual = DatabaseHelper.getStatusPaymentWithoutCredit();
         assertEquals(expected, actual);
     }
 
     @Test
     void shouldPaymentBySecondCardReject() {
-        val cardNumber = DataHelper.getSecondCardNumber();
+        val cardNumber = DataHelper.getDeclidedCardNumber();
         val month = DataHelper.getMonthValid();
         val year = DataHelper.getYearValid();
         val owner = DataHelper.getOwnerValid();
         val cvs = DataHelper.getCvsValid();
         payment.fillOutFields(cardNumber, month, year, owner, cvs);
         payment.expectRejectionFromBank();
-        val expected = DataHelper.getSecondCardExpectedStatus();
+        val expected = DataHelper.getDeclidedCardExpectedStatus();
         val actual = DatabaseHelper.getStatusPaymentWithoutCredit();
         assertEquals(expected, actual);
 
@@ -102,7 +102,7 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldRejectWhenPayCarWithEmptyCvs() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthValid();
         val year = DataHelper.getYearValid();
         val owner = DataHelper.getOwnerValid();
@@ -113,7 +113,7 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldRejectWhenPayCarWithInvalidCvs() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthValid();
         val year = DataHelper.getYearValid();
         val owner = DataHelper.getOwnerValid();
@@ -124,7 +124,7 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldRejectWhenPayCarWithZeroCvs() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthValid();
         val year = DataHelper.getYearValid();
         val owner = DataHelper.getOwnerValid();
@@ -136,7 +136,7 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldRejectEmptyMonth() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthValid();
         val year = DataHelper.getYearValid();
         val owner = DataHelper.getOwnerValid();
@@ -147,7 +147,7 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldRejectWhenPayCarWithInvalidMonth() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthInvalid();
         val year = DataHelper.getYearValid();
         val owner = DataHelper.getOwnerValid();
@@ -158,7 +158,7 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldRejectWhenPayCarWithZeroMonth() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthZero();
         val year = DataHelper.getYearValid();
         val owner = DataHelper.getOwnerValid();
@@ -169,7 +169,7 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldRejectWhenPayCarWithEmptyYear() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthValid();
         val year = DataHelper.getYearEmpty();
         val owner = DataHelper.getOwnerValid();
@@ -180,7 +180,7 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldRejectWhenPayCarWithInvalidYear() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthValid();
         val year = DataHelper.getYearInvalid();
         val owner = DataHelper.getOwnerValid();
@@ -191,7 +191,7 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldRejectWhenPayCarWithEmptyOwner() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthValid();
         val year = DataHelper.getYearValid();
         val owner = DataHelper.getOwnerEmpty();
@@ -202,7 +202,7 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldRejectWhenPayCarWithInvalidOwner() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthValid();
         val year = DataHelper.getYearValid();
         val owner = DataHelper.getOwnerInvalid();
@@ -213,7 +213,7 @@ public class BuyTravelWithoutCreditCartTest {
 
     @Test
     void shouldRejectWhenPayCarWithLongOwner() {
-        val cardNumber = DataHelper.getFirstCardNumber();
+        val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getMonthValid();
         val year = DataHelper.getYearValid();
         val owner = DataHelper.getOwnerLong();
