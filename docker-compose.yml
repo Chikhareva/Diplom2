@@ -6,23 +6,23 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - ./datamysql:/var/lib/mysql
+      - ./data:/var/lib/mysql
     environment:
       - MYSQL_RANDOM_ROOT_PASSWORD=yes
       - MYSQL_DATABASE=app
       - MYSQL_USER=user
       - MYSQL_PASSWORD=pass
 
- postgres:
-          image: postgres:12-alpine
-          ports:
-            - '5432:5432'
-          volumes:
-            - ./datapgsql:/var/lib/postgres/data
-          environment:
-            - POSTGRES_DB=appps
-            - POSTGRES_USER=userps
-            - POSTGRES_RANDOM_ROOT_PASSWORD=yes
+  postgres:
+    image: postgres:12-alpine
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./datadir:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=appps
+      - POSTGRES_USER=userps
+      - POSTGRES_PASSWORD=passps
 
   node-app:
     build: ./gate-simulator
