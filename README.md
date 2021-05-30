@@ -2,7 +2,7 @@
 
 * [Plan](https://github.com/Chikhareva/Diplom2/blob/master/DiplomDocs/Plan.md)
 * [Report](https://github.com/Chikhareva/Diplom2/blob/master/DiplomDocs/Report.md)
-* [Summary](https://github.com/Chikhareva/Diplom2/blob/master/DiplomDocs/Summery.md)
+* [Summary](https://github.com/Chikhareva/Diplom2/blob/master/DiplomDocs/Summary.md)
 
 ## Процедура запуска тестов сервиса покупки путешествий для MySql
 
