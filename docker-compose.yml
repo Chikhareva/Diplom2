@@ -13,19 +13,19 @@ services:
       - MYSQL_USER=user
       - MYSQL_PASSWORD=pass
 
-  postgres:
-    image: postgres:12-alpine
-    ports:
-      - '5432:5432'
-    volumes:
-      - ./datapgsql:/var/lib/postgres/data
-    environment:
-      - POSTGRES_DB=appps
-      - POSTGRES_USER=userps
-      - POSTGRES_PASSWORD=passps
+ postgres:
+          image: postgres:12-alpine
+          ports:
+            - '5432:5432'
+          volumes:
+            - ./datapgsql:/var/lib/postgres/data
+          environment:
+            - POSTGRES_DB=appps
+            - POSTGRES_USER=userps
+            - POSTGRES_RANDOM_ROOT_PASSWORD=yes
 
   node-app:
     build: ./gate-simulator
-    image: node-app:avo
+    image: node-app:1.0
     ports:
       - 9999:9999

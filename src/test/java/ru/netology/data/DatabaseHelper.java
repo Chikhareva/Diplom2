@@ -1,5 +1,6 @@
 package ru.netology.data;
 
+import lombok.SneakyThrows;
 import lombok.val;
 
 import java.sql.SQLException;
@@ -32,6 +33,7 @@ public class DatabaseHelper {
             throw new RuntimeException(exception);
         }
     }
+    @SneakyThrows
 
     public static String getStatusPaymentWithCredit() {
         val statusSql = "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1";
@@ -48,8 +50,8 @@ public class DatabaseHelper {
                 }
                 return null;
             }
-        } catch (SQLException exception) {
-            throw new RuntimeException(exception);
+//        } catch (SQLException exception) {
+//            throw new RuntimeException(exception);
         }
     }
 
