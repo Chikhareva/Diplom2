@@ -10,7 +10,7 @@
 * Перейти в каталог проекта
 * Запустить контейнеры MySql и Node c помощью команды docker-compose up -d --force-recreate.
 * Проверить, что контейнеры запустились командой docker-compose ps.
-* Из командной строки windows локальной машины запускаем приложение и передаем данные для подключения базы MySql командой java -Durl=jdbc:mysql://localhost:3306/app -Dusername=user -Dpassword=pass -Durl="jdbc:mysql://localhost:3306/app" -jar artifacts/aqa-shop.jar
+* Из командной строки windows локальной машины запускаем приложение и передаем данные для подключения базы MySql командой java -Durl=jdbc:mysql://localhost:3306/app -Dusername=user -Dpassword=pass -jar artifacts/aqa-shop.jar
 * Из командной строки локальной машины windows запускаем тесты командой gradlew clean test -Durl="jdbc:mysql://localhost:3306/app" -Duser="user" -Dpassword="pass" --info
 * Из командной строки локальной машины Windows выполнить команду gradlew allureReport, для формирования нужных файлов
 * В командной строке локальной машины windows формируем отчет командой gradlew allureServe
